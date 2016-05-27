@@ -35,5 +35,5 @@ dbInfo('usatest', dataset_path);
 dbExtract(dataset_path, strcat(dataset_path,'/extracted_data'),1,1);
 fprintf('\nDone.');
 
-fprintf('\nData extraction complete!');
+fprintf('\nData extraction complete!\n');
 end
