@@ -1,10 +1,23 @@
-# Caltech's Pedestrian dataset data extraction
+# Caltech's functions for data extraction
 
-Extracts all images and annotations of the Caltech Pedestrian dataset from data files with the `.vbb` format into `.jpg` and `.txt` files, respectively.
+Extracts all images and annotations of the (Caltech/INRIA/Tu-Brussels/ETH/Daimler) Pedestrian dataset from data files with the `.vbb` format into `.jpg` and `.txt` files, respectively.
 
 ## Usage 
 
-To use this code simply call **extract_file(`data_folder_path`)** to extract the data into a new folder `extracted_data/`.
+To use this code simply call **extract_file(`data_folder_path`, `dataset_name`, `store_folder_name`)** to extract the desired dataset.
+
+Parameters default values:
+- `data_folder_path = ../../`;
+- `dataset_name=usa`;
+- `store_folder_name=/extracted_data`
+
+Current available datasets for extraction:
+- Caltech Pedestrian
+- INRIA Pedestrian
+- ETH Pedestrian
+- TUD-Brussels Pedestrian
+- Daimler Pedestrian
+
 
 ## Disclamer
 
