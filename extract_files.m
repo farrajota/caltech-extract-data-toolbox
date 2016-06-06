@@ -62,14 +62,14 @@ switch dataset_name
     dbExtract(dataset_path, strcat(dataset_path, store_name),1,1);
     fprintf('\nDone.');
   case 'eth' % ETH dataset
-    % train + test
-    fprintf('Unpacking train+test set data...');
+    % test
+    fprintf('Unpacking test set data...');
     dbInfo('eth', dataset_path); 
     dbExtract(dataset_path, strcat(dataset_path, store_name),1,1);
     fprintf('\nDone.');
   case 'daimler' % Daimler dataset
-    % train + test
-    fprintf('Unpacking train+test set data...');
+    % test
+    fprintf('Unpacking test set data...');
     dbInfo('daimler', dataset_path); 
     dbExtract(dataset_path, strcat(dataset_path, store_name),1,1);
     fprintf('\nDone.');
