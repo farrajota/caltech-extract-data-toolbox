@@ -11,29 +11,69 @@ function extract_files( varargin )
 addpath(genpath('./'));
 
 %% Initializations
-
+% function's inputs
 if (nargin>=1), 
     if ~isempty(varargin{1}),
         dataset_path = varargin{1};
     else dataset_path = pwd; end
 else dataset_path = '../../'; end
+if (nargin >= 2), 
+    if ~isempty(varargin{2}),
+        dataset_name = varargin{2};
+    else dataset_name = 'usa'; end
+else dataset_name = 'usa'; end
+if (nargin >= 3), 
+    if ~isempty(varargin{3}),
+        store_name = varargin{3};
+    else store_name = '/extracted_data'; end
+else store_name = '/extracted_data'; end
 
 % create folders
-% extracted_files
-if(~exist(strcat(dataset_path,'/extracted_data'),'dir')), mkdir(strcat(dataset_path,'/extracted_data')); end
+if(~exist(strcat(dataset_path, store_name),'dir')), mkdir(strcat(dataset_path, store_name)); end
 
 %% Extract image files
-% Train
-fprintf('Unpacking train set data...');
-dbInfo('usatrain', dataset_path); 
-dbExtract(dataset_path, strcat(dataset_path,'/extracted_data'),1,1);
-fprintf('\nDone.');
+switch dataset_name
+  case 'usa' % Caltech Pedestrian Datasets (all)
+    % Train
+    fprintf('Unpacking train set data...');
+    dbInfo('usatrain', dataset_path); 
+    dbExtract(dataset_path, strcat(dataset_path, store_name),1,1);
+    fprintf('\nDone.');
+    % Test
+    fprintf('\nUnpacking test set data...');
+    dbInfo('usatest', dataset_path); 
+    dbExtract(dataset_path, strcat(dataset_path, store_name),1,1);
+    fprintf('\nDone.');
+  case 'inria' % INRIA dataset
+    % train
+    fprintf('Unpacking train set data...');
+    dbInfo('inriatrain', dataset_path); 
+    dbExtract(dataset_path, strcat(dataset_path, store_name),1,1);
+    fprintf('\nDone.');
+    % Test
+    fprintf('\nUnpacking test set data...');
+    dbInfo('inriatest', dataset_path); 
+    dbExtract(dataset_path, strcat(dataset_path, store_name),1,1);
+    fprintf('\nDone.');
+  case 'tudbrussels' % TUD-Brussels dataset
+    % train + test
+    fprintf('Unpacking train+test set data...');
+    dbInfo('tudbrussels', dataset_path); 
+    dbExtract(dataset_path, strcat(dataset_path, store_name),1,1);
+    fprintf('\nDone.');
+  case 'eth' % ETH dataset
+    % train + test
+    fprintf('Unpacking train+test set data...');
+    dbInfo('eth', dataset_path); 
+    dbExtract(dataset_path, strcat(dataset_path, store_name),1,1);
+    fprintf('\nDone.');
+  case 'daimler' % Daimler dataset
+    % train + test
+    fprintf('Unpacking train+test set data...');
+    dbInfo('daimler', dataset_path); 
+    dbExtract(dataset_path, strcat(dataset_path, store_name),1,1);
+    fprintf('\nDone.');
+  otherwise, error('unknown data type: %s', dataset_name);
+end
 
-% Test
-fprintf('\nUnpacking test set data...');
-dbInfo('usatest', dataset_path); 
-dbExtract(dataset_path, strcat(dataset_path,'/extracted_data'),1,1);
-fprintf('\nDone.');
-
-fprintf('\nData extraction complete!\n');
 end
