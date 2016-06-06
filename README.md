@@ -1,6 +1,6 @@
 # Caltech's functions for data extraction
 
-Extracts all images and annotations of the (Caltech/INRIA/Tu-Brussels/ETH/Daimler) Pedestrian dataset from data files with the `.vbb` format into `.jpg` and `.txt` files, respectively.
+Extracts all images and annotations of the (Caltech/INRIA/Tud-Brussels/ETH/Daimler) Pedestrian dataset from data files with the `.vbb` format into `.jpg` and `.txt` files, respectively.
 
 ## Usage 
 
