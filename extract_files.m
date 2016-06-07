@@ -56,8 +56,8 @@ switch dataset_name
     dbExtract(dataset_path, strcat(dataset_path, store_name),1,1);
     fprintf('\nDone.');
   case 'tudbrussels' % TUD-Brussels dataset
-    % train + test
-    fprintf('Unpacking train+test set data...');
+    % test
+    fprintf('Unpacking test set data...');
     dbInfo('tudbrussels', dataset_path); 
     dbExtract(dataset_path, strcat(dataset_path, store_name),1,1);
     fprintf('\nDone.');
