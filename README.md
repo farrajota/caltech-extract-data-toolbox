@@ -2,6 +2,10 @@
 
 Extracts all images and annotations of the (Caltech/INRIA/Tud-Brussels/ETH/Daimler) Pedestrian dataset from data files with the `.vbb` format into `.jpg` and `.txt` files, respectively.
 
+## Requirements
+
+- Matlab (R2012a or above)
+
 ## Usage 
 
 To use this code simply call **extract_file(`data_folder_path`, `dataset_name`, `store_folder_name`)** to extract the desired dataset.
